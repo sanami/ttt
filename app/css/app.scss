@@ -1,0 +1,14 @@
+$size: 150px;
+
+table.board {
+  width: 3*$size;
+
+  td {
+    width: $size;
+    height: $size;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: $size/2;
+  }
+}

@@ -1,0 +1,22 @@
+<ul class="list-inline">
+  <li><span class="label label-info">X <%= @board.name(0) %></span></li>
+  <li><span class="label label-info">O <%= @board.name(1) %></span></li>
+</ul>
+
+<script>
+  $(function(){
+    window.view = new BoardView(<%= @board.as_json.to_json %>);
+  })
+</script>
+
+<h1 class="message">aaaaaa</h1>
+
+<table class="board">
+  <% 3.times do |i| %>
+    <tr>
+      <% 3.times do |j| %>
+        <td class="cell cell-<%= i %>-<%= j %>" data-row="<%= i %>" data-column="<%= j %>"></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

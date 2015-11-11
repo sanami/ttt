@@ -23,15 +23,14 @@ class App < Sinatra::Base
   end
 
   post '/board' do
-    @board = Board.new(players: [params['player1'], params['player2']])
+    @board = Board.new('players' => [params['player1'], params['player2']])
     erb :board
   end
 
   post '/play' do
     content_type :json
-    ap params
 
-    board = Board.new(params[:board])
+    board = Board.new(JSON.parse(params[:board]))
     board.play(params[:move])
 
     board.as_json.to_json

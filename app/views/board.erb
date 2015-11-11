@@ -1,6 +1,6 @@
 <ul class="list-inline">
-  <li><span class="label label-info">X <%= @board.name(0) %></span></li>
-  <li><span class="label label-info">O <%= @board.name(1) %></span></li>
+  <li><h2><span class="label label-info"><%= Board::PLAYER1 %> - <%= @board.name(0) %></span></h2></li>
+  <li><h2><span class="label label-info"><%= Board::PLAYER2 %> - <%= @board.name(1) %></span></h2></li>
 </ul>
 
 <script>
@@ -9,7 +9,7 @@
   })
 </script>
 
-<h1 class="message">aaaaaa</h1>
+<h1 class="message"></h1>
 
 <table class="board">
   <% 3.times do |i| %>

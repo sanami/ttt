@@ -24,7 +24,7 @@ class window.BoardView extends Backbone.View
         url: '/play'
         dataType: 'json'
         data:
-          board: @board
+          board: JSON.stringify(@board)
           move:
             row: r
             column: c
@@ -43,7 +43,7 @@ class window.BoardView extends Backbone.View
           @$(".cell-#{r}-#{c}").text cell
 
     $('.message').text(@board.message)
-    @can_play = !@board.is_finished
+    @can_play = @board.board_status == 'playing'
 
   cell: (r, c)->
     @board.cells[r][c]
